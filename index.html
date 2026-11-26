@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>起草c17cm视频_分镜脚本起草_短视频拍摄剪辑全流程</title>
+<meta name="description" content="起草c17cm视频聚焦短视频从分镜脚本起草到拍摄剪辑的完整流程，提供脚本模板、分镜案例、器材清单、剪辑节点与发布节奏条目，适合新手导演与内容创作者参考。">
+<meta name="keywords" content="分镜脚本模板,短视频拍摄流程,剪辑节点清单,运镜设计案例,内容发布节奏">
+<style>
+:root{
+  --bg:#0e1116;
+  --bg-soft:#141922;
+  --panel:#171d27;
+  --panel-2:#1d2531;
+  --line:#2a3442;
+  --line-soft:#222b38;
+  --text:#e8edf4;
+  --text-2:#a9b6c7;
+  --text-3:#7d8b9e;
+  --accent:#ff5a3c;
+  --accent-2:#ffb020;
+  --accent-soft:rgba(255,90,60,.14);
+  --cyan:#3ddad7;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --header-h:62px;
+  --notice-h:40px;
+  --maxw:1320px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255,90,60,.10), transparent 60%),
+    radial-gradient(900px 500px at 5% 0%, rgba(61,218,215,.08), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700;letter-spacing:.2px}
+p{margin:0 0 10px}
+ul,ol{margin:0;padding-left:18px}
+li{margin:4px 0}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
+
+/* ===== 吸顶区 ===== */
+.sticky-top{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(10px);
+}
+.notice{
+  height:var(--notice-h);
+  background:linear-gradient(90deg,#ff5a3c,#ff7a3c 45%,#ffb020);
+  color:#1a1006;
+  display:flex;align-items:center;
+  font-size:13px;font-weight:600;
+}
+.notice .notice-inner{
+  width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:12px;overflow:hidden;
+}
+.notice .dot{
+  width:7px;height:7px;border-radius:50%;background:#1a1006;flex:none;
+  animation:pulse 1.6s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.notice .notice-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.notice .notice-link{
+  margin-left:auto;flex:none;background:#1a1006;color:#ffd7a8;
+  padding:2px 10px;border-radius:20px;font-size:12px;font-weight:600;
+}
+.header{
+  height:var(--header-h);
+  background:rgba(14,17,22,.92);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--maxw);margin:0 auto;height:100%;padding:0 20px;
+  display:flex;align-items:center;gap:18px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:36px;height:36px;flex:none}
+.brand-name{font-size:17px;font-weight:800;letter-spacing:.5px}
+.brand-name em{color:var(--accent);font-style:normal}
+.main-nav{display:flex;gap:4px;margin-left:6px;flex-wrap:wrap}
+.main-nav a{
+  padding:7px 11px;border-radius:8px;font-size:13.5px;color:var(--text-2);
+  transition:.18s;
+}
+.main-nav a:hover{background:var(--panel-2);color:var(--text)}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-box{
+  display:flex;align-items:center;background:var(--panel);
+  border:1px solid var(--line);border-radius:20px;padding:0 4px 0 12px;
+  height:36px;
+}
+.search-box input{
+  background:transparent;border:0;color:var(--text);font-size:13px;
+  width:150px;font-family:inherit;
+}
+.search-box input::placeholder{color:var(--text-3)}
+.search-box input:focus{outline:none}
+.search-box button{
+  background:var(--accent);border:0;color:#fff;height:28px;padding:0 12px;
+  border-radius:16px;font-size:12.5px;font-weight:600;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;justify-content:center;
+  border-radius:9px;padding:9px 16px;font-size:13.5px;font-weight:600;
+  border:1px solid transparent;transition:.18s;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#ff7558}
+.btn-ghost{border-color:var(--line);color:var(--text-2);background:var(--panel)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--text)}
+.menu-toggle{display:none;background:var(--panel);border:1px solid var(--line);color:var(--text);width:38px;height:36px;border-radius:8px}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line-soft);
+  background:
+    linear-gradient(180deg, rgba(23,29,39,0) 0%, rgba(14,17,22,.6) 100%);
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;padding:52px 20px 56px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--accent-2);font-weight:700;
+  background:rgba(255,176,32,.10);border:1px solid rgba(255,176,32,.3);
+  padding:4px 12px;border-radius:20px;margin-bottom:18px;letter-spacing:.6px;
+}
+.hero h1{
+  font-size:44px;line-height:1.16;letter-spacing:.5px;
+  background:linear-gradient(92deg,#ffffff 20%,#ffd0b8 60%,#ff8a6a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:16px;
+}
+.hero-lead{font-size:15.5px;color:var(--text-2);max-width:560px;margin-bottom:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+.hero-stats .stat b{display:block;font-size:22px;color:var(--text);font-weight:800}
+.hero-stats .stat span{font-size:12.5px;color:var(--text-3)}
+.hero-visual{position:relative}
+.storyboard{
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:16px;box-shadow:var(--shadow);
+}
+.storyboard-head{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.storyboard-head .tag{
+  font-size:11px;font-weight:700;color:var(--cyan);
+  background:rgba(61,218,215,.10);border:1px solid rgba(61,218,215,.3);
+  padding:2px 8px;border-radius:6px;
+}
+.storyboard-head .dots{margin-left:auto;display:flex;gap:5px}
+.storyboard-head .dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.storyboard-head .dots i:first-child{background:var(--accent)}
+.shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.shot{
+  aspect-ratio:4/3;border-radius:8px;border:1px solid var(--line-soft);
+  position:relative;overflow:hidden;background:var(--panel-2);
+}
+.shot svg{width:100%;height:100%;display:block}
+.shot .no{
+  position:absolute;left:5px;bottom:4px;font-size:10px;color:var(--text-3);
+  font-weight:700;letter-spacing:.5px;
+}
+.timeline{
+  margin-top:12px;height:34px;border-radius:8px;background:var(--bg-soft);
+  border:1px solid var(--line-soft);display:flex;align-items:center;gap:3px;padding:0 6px;
+}
+.timeline .seg{height:14px;border-radius:3px}
+.timeline .seg.a{background:var(--accent);flex:3}
+.timeline .seg.b{background:var(--accent-2);flex:2}
+.timeline .seg.c{background:var(--cyan);flex:2}
+.timeline .seg.d{background:#5c7cfa;flex:4}
+.timeline .seg.e{background:#9b6cff;flex:2}
+.timeline .time{margin-left:auto;font-size:10.5px;color:var(--text-3);font-weight:600}
+
+/* ===== 布局 ===== */
+.layout{
+  max-width:var(--maxw);margin:0 auto;padding:34px 20px 10px;
+  display:grid;grid-template-columns:186px minmax(0,1fr) 258px;gap:26px;
+  align-items:start;
+}
+.anchor{scroll-margin-top:calc(var(--notice-h) + var(--header-h) + 16px)}
+.sidebar-left{position:sticky;top:calc(var(--notice-h) + var(--header-h) + 18px)}
+.sidebar-right{position:sticky;top:calc(var(--notice-h) + var(--header-h) + 18px);display:flex;flex-direction:column;gap:18px}
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;
+}
+.side-card h3{
+  font-size:13px;color:var(--text-3);font-weight:700;letter-spacing:1px;
+  margin-bottom:12px;text-transform:uppercase;
+}
+.channel-list{display:flex;flex-direction:column;gap:2px}
+.channel-list a{
+  display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;
+  font-size:13.5px;color:var(--text-2);transition:.15s;
+}
+.channel-list a:hover{background:var(--panel-2);color:var(--text)}
+.channel-list a .ico{width:6px;height:6px;border-radius:2px;background:var(--text-3);flex:none}
+.channel-list a:nth-child(1) .ico{background:var(--accent)}
+.channel-list a:nth-child(2) .ico{background:var(--accent-2)}
+.channel-list a:nth-child(3) .ico{background:var(--cyan)}
+.channel-list a:nth-child(4) .ico{background:#5c7cfa}
+.channel-list a:nth-child(5) .ico{background:#9b6cff}
+.channel-list a:nth-child(6) .ico{background:#4ade80}
+.channel-list a:nth-child(7) .ico{background:#f472b6}
+.channel-list a:nth-child(8) .ico{background:#fbbf24}
+.hot-list{display:flex;flex-direction:column;gap:10px;counter-reset:hot}
+.hot-list li{
+  list-style:none;display:flex;gap:9px;font-size:13px;align-items:flex-start;
+}
+.hot-list li::before{
+  counter-increment:hot;content:counter(hot);
+  width:18px;height:18px;flex:none;border-radius:5px;
+  background:var(--panel-2);color:var(--text-3);
+  font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.hot-list li:nth-child(1)::before{background:var(--accent);color:#fff}
+.hot-list li:nth-child(2)::before{background:var(--accent-2);color:#1a1006}
+.hot-list li:nth-child(3)::before{background:var(--cyan);color:#06201f}
+.hot-list a{color:var(--text-2);line-height:1.5}
+.hot-list a:hover{color:var(--accent)}
+.hot-list .meta{display:block;font-size:11.5px;color:var(--text-3)}
+
+/* ===== 主内容通用 ===== */
+.main-col{display:flex;flex-direction:column;gap:34px;min-width:0}
+.section{min-width:0}
+.section-head{
+  display:flex;align-items:flex-end;gap:12px;margin-bottom:16px;flex-wrap:wrap;
+}
+.section-head h2{font-size:21px;letter-spacing:.4px}
+.section-head .sub{font-size:12.5px;color:var(--text-3);margin-left:auto}
+.section-head .bar{
+  width:4px;height:20px;border-radius:2px;background:var(--accent);flex:none;
+  margin-bottom:3px;
+}
+.lead-text{font-size:14.5px;color:var(--text-2);line-height:1.85;margin-bottom:14px}
+.lead-text strong{color:var(--text)}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;
+}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+.ov-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 15px;
+}
+.ov-item b{display:block;font-size:13.5px;margin-bottom:5px;color:var(--text)}
+.ov-item span{font-size:12.5px;color:var(--text-3);line-height:1.65}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+}
+.card:hover{border-color:rgba(255,90,60,.5);transform:translateY(-2px)}
+.card .cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--panel-2)}
+.card .cover img{width:100%;height:100%;object-fit:cover}
+.card .cover .type{
+  position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;
+  background:rgba(14,17,22,.82);color:var(--accent-2);
+  padding:2px 8px;border-radius:5px;border:1px solid rgba(255,176,32,.35);
+}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body h3{font-size:14.5px;line-height:1.45}
+.card-body .desc{font-size:12.5px;color:var(--text-3);line-height:1.65;flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{
+  font-size:11px;color:var(--text-2);background:var(--panel-2);
+  padding:2px 7px;border-radius:5px;border:1px solid var(--line-soft);
+}
+.card-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:11.5px;color:var(--text-3);padding-top:4px;
+}
+.card-foot .hot{color:var(--accent);font-weight:700}
+.card-foot .score{color:var(--accent-2);font-weight:700}
+
+/* 更新列表 */
+.update-list{display:flex;flex-direction:column;gap:0}
+.update-item{
+  display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+  padding:11px 4px;border-bottom:1px dashed var(--line-soft);font-size:13.5px;
+}
+.update-item:last-child{border-bottom:0}
+.update-item .idx{
+  font-size:11px;font-weight:800;color:var(--text-3);
+  width:26px;flex:none;font-variant-numeric:tabular-nums;
+}
+.update-item .name{font-weight:600;color:var(--text)}
+.update-item .name small{
+  font-weight:400;color:var(--text-3);margin-left:8px;font-size:12px;
+}
+.update-item time{font-size:11.5px;color:var(--text-3);white-space:nowrap}
+
+/* 分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px;transition:.18s;display:flex;flex-direction:column;gap:4px;
+}
+.cat-card:hover{border-color:var(--cyan);background:var(--panel-2)}
+.cat-card b{font-size:13.5px}
+.cat-card span{font-size:11.5px;color:var(--text-3)}
+.cat-card .count{color:var(--accent);font-weight:700;font-size:12px;margin-top:2px}
+
+/* 深度解析 */
+.deep h3{
+  font-size:16px;margin:20px 0 9px;padding-left:11px;
+  border-left:3px solid var(--accent);line-height:1.4;
+}
+.deep h3:first-of-type{margin-top:4px}
+.deep p{font-size:14px;color:var(--text-2);line-height:1.9}
+.deep ul{font-size:14px;color:var(--text-2);line-height:1.85;margin-bottom:12px}
+.deep li strong{color:var(--text)}
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;
+}
+.compare-panel{
+  background:var(--panel-2);border:1px solid var(--line-soft);
+  border-radius:var(--radius-sm);padding:14px;
+}
+.compare-panel h4{font-size:13.5px;margin-bottom:8px;color:var(--accent-2)}
+.compare-panel p{font-size:12.5px;color:var(--text-3);margin:0}
+
+/* 步骤 */
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:12px}
+.step{
+  display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:flex-start;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 16px;
+}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  font-size:15px;font-weight:800;color:var(--accent);
+  background:var(--accent-soft);border-radius:8px;
+  width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+}
+.step b{display:block;font-size:14px;margin-bottom:3px}
+.step span{font-size:12.5px;color:var(--text-3);line-height:1.7}
+
+/* FAQ */
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:0 16px;margin-bottom:10px;overflow:hidden;
+}
+.faq details[open]{border-color:rgba(255,90,60,.45)}
+.faq summary{
+  cursor:pointer;padding:14px 0;font-size:14px;font-weight:600;
+  list-style:none;display:flex;align-items:center;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{
+  content:"+";color:var(--accent);font-size:18px;font-weight:700;line-height:1;
+  width:16px;flex:none;
+}
+.faq details[open] summary::before{content:"–"}
+.faq .answer{
+  font-size:13px;color:var(--text-2);line-height:1.85;
+  padding:0 0 14px 26px;border-top:1px solid var(--line-soft);padding-top:12px;
+}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:13px 14px;
+}
+.comment .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:800;color:#fff;
+}
+.comment .who b{font-size:12.5px}
+.comment .who time{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment p{font-size:12.5px;color:var(--text-2);margin:0;line-height:1.7}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:12px}
+.news-item{
+  display:grid;grid-template-columns:132px 1fr;gap:14px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px;overflow:hidden;
+}
+.news-item img{width:100%;height:88px;object-fit:cover;border-radius:7px}
+.news-item h3{font-size:14px;margin-bottom:4px}
+.news-item .meta{font-size:11.5px;color:var(--text-3);margin-bottom:4px}
+.news-item p{font-size:12.5px;color:var(--text-3);margin:0;line-height:1.65}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:9px}
+.tag-index a{
+  font-size:13px;color:var(--text-2);background:var(--panel);
+  border:1px solid var(--line);border-radius:20px;padding:6px 14px;transition:.16s;
+}
+.tag-index a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* 时间线 */
+.timeline-v{position:relative;padding-left:22px}
+.timeline-v::before{
+  content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--accent),var(--cyan));
+  border-radius:2px;
+}
+.tl-item{position:relative;padding:0 0 16px 0}
+.tl-item::before{
+  content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;
+  border-radius:50%;background:var(--panel);border:2px solid var(--accent);
+}
+.tl-item b{font-size:13.5px;display:block}
+.tl-item span{font-size:12px;color:var(--text-3)}
+
+/* 搜索无结果 */
+.no-result{
+  display:none;padding:24px;text-align:center;font-size:13.5px;color:var(--text-3);
+  background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius-sm);
+}
+.searching .card-grid .card{display:none}
+.searching .card-grid .card.show{display:flex}
+.searching .no-result.show{display:block}
+
+/* 页尾 */
+.footer{
+  margin-top:48px;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,transparent,rgba(23,29,39,.6));
+}
+.footer-inner{
+  max-width:var(--maxw);margin:0 auto;padding:38px 20px 26px;
+  display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px;
+}
+.footer-brand .brand{margin-bottom:12px}
+.footer-brand p{font-size:12.5px;color:var(--text-3);line-height:1.8;max-width:300px}
+.footer-col h4{font-size:12.5px;color:var(--text-3);letter-spacing:1px;margin-bottom:12px}
+.footer-col a{display:block;font-size:12.5px;color:var(--text-2);padding:3px 0}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{
+  max-width:var(--maxw);margin:0 auto;padding:16px 20px 30px;
+  border-top:1px solid var(--line-soft);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:11.5px;color:var(--text-3);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width:1180px){
+  .layout{grid-template-columns:170px minmax(0,1fr) 236px;gap:20px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:38px}
+}
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 268px}
+  .sidebar-left{
+    position:static;order:3;grid-column:1 / -1;
+  }
+  .sidebar-left .side-card{position:static}
+  .channel-list{flex-direction:row;flex-wrap:wrap}
+  .channel-list a{background:var(--panel);border:1px solid var(--line)}
+  .sidebar-right{position:static}
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero h1{font-size:36px}
+  .hero-visual{max-width:520px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .main-nav{display:none}
+  .main-nav.open{
+    display:flex;position:absolute;left:0;right:0;
+    top:calc(var(--notice-h) + var(--header-h));
+    background:var(--bg-soft);border-bottom:1px solid var(--line);
+    padding:12px 20px;flex-direction:column;z-index:70;
+    box-shadow:var(--shadow);
+  }
+  .main-nav.open a{padding:10px 12px}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+  .search-box input{width:110px}
+}
+@media (max-width:740px){
+  body{font-size:14.5px}
+  .layout{grid-template-columns:1fr;padding:24px 16px 10px;gap:26px}
+  .sidebar-left,.sidebar-right{order:2}
+  .main-col{gap:28px}
+  .header-inner{padding:0 16px;gap:10px}
+  .brand-name{font-size:15px}
+  .search-box{display:none}
+  .hero-inner{padding:36px 16px 40px}
+  .hero h1{font-size:29px}
+  .hero-lead{font-size:14px}
+  .hero-stats{gap:20px}
+  .card-grid{grid-template-columns:1fr}
+  .overview-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .compare{grid-template-columns:1fr}
+  .comment-grid{grid-template-columns:1fr}
+  .news-item{grid-template-columns:1fr}
+  .news-item img{height:130px}
+  .update-item{grid-template-columns:auto 1fr;gap:8px}
+  .update-item time{grid-column:2;text-align:left}
+  .footer-inner{grid-template-columns:1fr;gap:22px;padding:30px 16px 20px}
+  .footer-bottom{padding:16px 16px 28px}
+  .section-head h2{font-size:19px}
+  .notice .notice-inner{padding:0 16px}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- 吸顶区：公告条 + 页头 -->
+<div class="sticky-top">
+  <div class="notice" role="region" aria-label="站内公告">
+    <div class="notice-inner">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="notice-text">本周新增 12 份分镜脚本模板 · 11 月 24 日更新「一镜到底」运镜拆解</span>
+      <a class="notice-link" href="/#updates">查看更新</a>
+    </div>
+  </div>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="起草c17cm视频 首页">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="2" y="7" width="26" height="26" rx="7" fill="#ff5a3c"/>
+          <path d="M12 15.5v9l8-4.5-8-4.5z" fill="#fff"/>
+          <rect x="24" y="12" width="14" height="3.6" rx="1.8" fill="#ffb020"/>
+          <rect x="24" y="18.2" width="14" height="3.6" rx="1.8" fill="#3ddad7"/>
+          <rect x="24" y="24.4" width="14" height="3.6" rx="1.8" fill="#5c7cfa"/>
+        </svg>
+        <span class="brand-name">起草<em>c17cm</em>视频</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选脚本</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#cats">分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#faq">问答</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box" role="search">
+          <input type="search" id="searchInput" placeholder="搜索脚本 / 运镜 / 器材" aria-label="站内搜索">
+          <button type="button" id="searchBtn">查找</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="展开导航菜单">☰</button>
+        <a class="btn btn-primary" href="/#picks">开始起草</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">分镜 · 脚本 · 拍摄 · 剪辑</span>
+      <h1>起草c17cm视频</h1>
+      <p class="hero-lead">从一句创意到一条能发的成片。这里把分镜脚本起草、运镜设计、器材清单、剪辑节点串成可复用的工作流，帮新手导演与内容创作者把 17 厘米画幅的小屏叙事拍清楚。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#picks">浏览脚本模板</a>
+        <a class="btn btn-ghost" href="/#guide">查看体验指南</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>128</b><span>分镜脚本模板</span></div>
+        <div class="stat"><b>36</b><span>运镜拆解案例</span></div>
+        <div class="stat"><b>2.4 万</b><span>社区创作者</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="storyboard">
+        <div class="storyboard-head">
+          <span class="tag">STORYBOARD</span>
+          <span style="font-size:11.5px;color:var(--text-3)">《雨夜便利店》· 6 镜</span>
+          <div class="dots"><i></i><i></i><i></i></div>
+        </div>
+        <div class="shot-grid">
+          <div class="shot"><svg viewBox="0 0 100 75" preserveAspectRatio="none"><rect width="100" height="75" fill="#1d2531"/><circle cx="50" cy="38" r="16" fill="none" stroke="#ff5a3c" stroke-width="2"/><line x1="34" y1="38" x2="66" y2="38" stroke="#ff5a3c" stroke-width="2"/><line x1="50" y1="22" x2="50" y2="54" stroke="#ff5a3c" stroke-width="2"/></svg><span class="no">01 全景</span></div>
+          <div class="shot"><svg viewBox="0 0 100 75" preserveAspectRatio="none"><rect width="100" height="75" fill="#1d2531"/><rect x="20" y="46" width="60" height="6" fill="#ffb020"/><circle cx="50" cy="30" r="9" fill="#3ddad7"/></svg><span class="no">02 中景</span></div>
+          <div class="shot"><svg viewBox="0 0 100 75" preserveAspectRatio="none"><rect width="100" height="75" fill="#1d2531"/><path d="M10 60 L40 26 L70 60 Z" fill="none" stroke="#5c7cfa" stroke-width="2"/><circle cx="70" cy="26" r="6" fill="#ff5a3c"/></svg><span class="no">03 过肩</span></div>
+          <div class="shot"><svg viewBox="0 0 100 75" preserveAspectRatio="none"><rect width="100" height="75" fill="#1d2531"/><rect x="26" y="20" width="48" height="36" rx="4" fill="none" stroke="#9b6cff" stroke-width="2"/><line x1="26" y1="38" x2="74" y2="38" stroke="#9b6cff" stroke-width="1.5"/></svg><span class="no">04 特写</span></div>
+          <div class="shot"><svg viewBox="0 0 100 75" preserveAspectRatio="none"><rect width="100" height="75" fill="#1d2531"/><circle cx="34" cy="40" r="10" fill="#4ade80"/><circle cx="66" cy="40" r="10" fill="#f472b6"/><line x1="44" y1="40" x2="56" y2="40" stroke="#e8edf4" stroke-width="2"/>
+          </svg><span class="no">05 双人</span></div>
+          <div class="shot"><svg viewBox="0 0 100 75" preserveAspectRatio="none"><rect width="100" height="75" fill="#1d2531"/><path d="M14 56 Q50 10 86 56" fill="none" stroke="#ffb020" stroke-width="2"/><circle cx="50" cy="34" r="5" fill="#ff5a3c"/></svg><span class="no">06 空镜</span></div>
+        </div>
+        <div class="timeline">
+          <span class="seg a"></span><span class="seg b"></span><span class="seg c"></span><span class="seg d"></span><span class="seg e"></span>
+          <span class="time">00:42 / 01:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏布局 -->
+<div class="layout">
+
+  <!-- 左栏：频道索引 -->
+  <aside class="sidebar-left" aria-label="频道索引">
+    <div class="side-card">
+      <h3>频道索引</h3>
+      <nav class="channel-list" aria-label="内容频道">
+        <a href="/#picks"><span class="ico"></span>分镜脚本</a>
+        <a href="/#picks"><span class="ico"></span>运镜设计</a>
+        <a href="/#picks"><span class="ico"></span>灯光布景</a>
+        <a href="/#updates"><span class="ico"></span>剪辑节点</a>
+        <a href="/#cats"><span class="ico"></span>器材清单</a>
+        <a href="/#cats"><span class="ico"></span>口播文案</a>
+        <a href="/#deep"><span class="ico"></span>调色风格</a>
+        <a href="/#cats"><span class="ico"></span>发布节奏</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- 中间主内容 -->
+  <main class="main-col">
+
+    <!-- 1 主题领域概览 -->
+    <section class="section anchor" id="overview">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>短视频分镜脚本的领域概览</h2>
+        <span class="sub">更新于 2026-11-25</span>
+      </div>
+      <p class="lead-text">起草c17cm视频所指的，是一套面向竖屏短片与横屏短剧的<b>分镜脚本起草方法</b>，核心不是把字写多，而是把「镜号、景别、运镜、时长、声音、字幕」六件事在开拍前定死。这个领域大致分三条主线：<strong>叙事脚本</strong>负责结构与对白，<strong>分镜脚本</strong>负责画面与调度，<strong>执行脚本</strong>负责器材、场地与拍摄顺序。当前值得关注的方向包括：一镜到底的分镜预演、手机竖屏的运镜替代方案、低成本夜景布光，以及把剪辑节点前置写进脚本的「可剪性」设计。</p>
+      <p class="lead-text">对刚接触的人来说，最容易踩的坑是把脚本写成散文——文字漂亮但没法拍。判断一份脚本是否合格，看三件事：每个镜号是否有唯一机位，每个镜头是否标了时长预算，每个转场是否写了声音或动作依据。围绕这三条，本站整理了模板、案例与拆解，覆盖从 15 秒口播到 3 分钟叙事短片的常见规格。</p>
+      <div class="overview-grid">
+        <div class="ov-item"><b>叙事脚本</b><span>结构、冲突、对白节奏，决定观众看不看完。</span></div>
+        <div class="ov-item"><b>分镜脚本</b><span>镜号、景别、运镜、构图，决定画面能不能成立。</span></div>
+        <div class="ov-item"><b>执行脚本</b><span>器材、场地、拍摄顺序与时间预算，决定拍不拍得完。</span></div>
+        <div class="ov-item"><b>可剪性设计</b><span>剪辑节点前置，决定成片是否顺畅、能否复剪。</span></div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section anchor" id="picks">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>精选分镜脚本与拆解案例</h2>
+        <span class="sub">共 9 份 · 可筛选</span>
+      </div>
+      <div class="card-grid" id="cardGrid">
+
+        <article class="card searchable" data-key="雨夜便利店 分镜 夜景 竖屏 一镜到底">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-yuye01/400/300" width="400" height="300" loading="lazy" alt="雨夜便利店分镜脚本封面">
+            <span class="type">分镜模板</span>
+          </div>
+          <div class="card-body">
+            <h3>《雨夜便利店》6 镜竖屏分镜</h3>
+            <p class="desc">60 秒单场景叙事，用玻璃反光做转场，全程手机可拍。附机位图与夜景布光参数，适合练习低照度下的构图控制。</p>
+            <div class="tags"><span>竖屏</span><span>夜景</span><span>单场景</span></div>
+            <div class="card-foot"><span class="hot">热度 9.6</span><span>11-24 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="一镜到底 运镜 长镜头 调度">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-yijing02/400/300" width="400" height="300" loading="lazy" alt="一镜到底运镜拆解示意图">
+            <span class="type">运镜拆解</span>
+          </div>
+          <div class="card-body">
+            <h3>一镜到底的 4 段式运镜拆解</h3>
+            <p class="desc">把一个长镜头拆成起幅、跟随、环绕、落幅四段，每段给出可复现的走位与焦段建议，解决长镜头容易「晃」和「拖」的问题。</p>
+            <div class="tags"><span>长镜头</span><span>走位</span><span>焦段</span></div>
+            <div class="card-foot"><span class="hot">热度 9.2</span><span>11-22 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="口播 文案 提词 15秒 竖屏">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-koubo03/400/300" width="400" height="300" loading="lazy" alt="15秒口播脚本模板配图">
+            <span class="type">口播脚本</span>
+          </div>
+          <div class="card-body">
+            <h3>15 秒口播脚本：钩子—证据—行动</h3>
+            <p class="desc">三段式结构配提词节奏标记，标注每句的字数上限与换气点，适合知识类与产品类口播直接套用。</p>
+            <div class="tags"><span>口播</span><span>提词</span><span>15秒</span></div>
+            <div class="card-foot"><span class="hot">热度 8.9</span><span>11-20 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="双人对话 过肩 正反打 机位">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-duihua04/400/300" width="400" height="300" loading="lazy" alt="双人对话正反打机位图">
+            <span class="type">机位图</span>
+          </div>
+          <div class="card-body">
+            <h3>双人对话的正反打机位图</h3>
+            <p class="desc">用三角机位法解决越轴问题，给出过肩、内反打、外反打三种配置的适用场景，附 30 度规则示意。</p>
+            <div class="tags"><span>正反打</span><span>越轴</span><span>对话戏</span></div>
+            <div class="card-foot"><span class="hot">热度 8.7</span><span>11-18 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="夜景 布光 低照度 手机拍摄 补光">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-buguang05/400/300" width="400" height="300" loading="lazy" alt="夜景低照度布光方案图">
+            <span class="type">灯光布景</span>
+          </div>
+          <div class="card-body">
+            <h3>夜景低照度布光：三灯方案</h3>
+            <p class="desc">主光、轮廓光、环境光的三灯配置，附色温对照与手机夜景模式的配合参数，专门解决「人脸发灰、背景死黑」。</p>
+            <div class="tags"><span>夜景</span><span>三灯</span><span>色温</span></div>
+            <div class="card-foot"><span class="hot">热度 8.5</span><span>11-16 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="剪辑节点 节奏 卡点 时间线">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-jianjii06/400/300" width="400" height="300" loading="lazy" alt="剪辑节点节奏时间线示意图">
+            <span class="type">剪辑节点</span>
+          </div>
+          <div class="card-body">
+            <h3>把剪辑节点写进脚本的方法</h3>
+            <p class="desc">在分镜表里增加「入点/出点/音乐小节」三列，让剪辑师在拍摄前就知道哪一帧要断，减少后期返工。</p>
+            <div class="tags"><span>卡点</span><span>入出点</span><span>时间线</span></div>
+            <div class="card-foot"><span class="hot">热度 8.4</span><span>11-14 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="手机 器材 稳定器 麦克风 清单">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-qicai07/400/300" width="400" height="300" loading="lazy" alt="手机拍摄器材清单配图">
+            <span class="type">器材清单</span>
+          </div>
+          <div class="card-body">
+            <h3>手机拍摄的 8 件基础器材</h3>
+            <p class="desc">稳定器、领夹麦、补光灯、反光板、ND 镜等八件套，按预算分入门与进阶两档，附各自的替代方案。</p>
+            <div class="tags"><span>稳定器</span><span>领夹麦</span><span>入门</span></div>
+            <div class="card-foot"><span class="hot">热度 8.2</span><span>11-12 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="三分钟 叙事短片 结构 剧本 转折">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-xushi08/400/300" width="400" height="300" loading="lazy" alt="三分钟叙事短片结构图">
+            <span class="type">叙事脚本</span>
+          </div>
+          <div class="card-body">
+            <h3>三分钟叙事短片的三幕结构</h3>
+            <p class="desc">把 180 秒拆成 20/100/60 的三段，标出第一次转折与情绪高点的时间码，适合短剧与品牌故事片。</p>
+            <div class="tags"><span>三幕</span><span>转折点</span><span>短剧</span></div>
+            <div class="card-foot"><span class="hot">热度 8.1</span><span>11-10 更新</span></div>
+          </div>
+        </article>
+
+        <article class="card searchable" data-key="调色 风格 lut 电影感 反差">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/c17-tiaose09/400/300" width="400" height="300" loading="lazy" alt="调色风格反差对照图">
+            <span class="type">调色风格</span>
+          </div>
+          <div class="card-body">
+            <h3>四种调色风格的反差对照</h3>
+            <p class="desc">青橙、低饱和、胶片颗粒、高对比冷调四种风格的曲线差异与适用题材，附拍摄期的白平衡设置建议。</p>
+            <div class="tags"><span>青橙</span><span>胶片感</span><span>曲线</span></div>
+            <div class="card-foot"><span class="hot">热度 7.9</span><span>11-08 更新</span></div>
+          </div>
+        </article>
+
+      </div>
+      <div class="no-result" id="noResult">没有找到匹配的脚本或案例，换一个关键词试试，例如「夜景」「口播」「运镜」。</div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section anchor" id="updates">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>最新更新与拍摄动态</h2>
+        <span class="sub">近 30 天</span>
+      </div>
+      <div class="panel update-list">
+        <div class="update-item"><span class="idx">01</span><span class="name">《雨夜便利店》分镜模板 <small>新增第 7 镜备用方案</small></span><time>今天 09:30</time></div>
+        <div class="update-item"><span class="idx">02</span><span class="name">一镜到底拆解 <small>补充环绕段防抖走位</small></span><time>昨天 21:10</time></div>
+        <div class="update-item"><span class="idx">03</span><span class="name">15 秒口播脚本 <small>上线提词节奏标记版</small></span><time>11 月 23 日</time></div>
+        <div class="update-item"><span class="idx">04</span><span class="name">三灯夜景布光 <small>新增色温对照表</small></span><time>11 月 21 日</time></div>
+        <div class="update-item"><span class="idx">05</span><span class="name">正反打机位图 <small>修正越轴示意角度</small></span><time>11 月 19 日</time></div>
+        <div class="update-item"><span class="idx">06</span><span class="name">剪辑节点表 <small>增加音乐小节对齐列</small></span><time>11 月 17 日</time></div>
+        <div class="update-item"><span class="idx">07</span><span class="name">手机器材清单 <small>更新入门档预算区间</small></span><time>11 月 15 日</time></div>
+        <div class="update-item"><span class="idx">08</span><span class="name">三幕结构脚本 <small>补情绪高点时间码</small></span><time>11 月 13 日</time></div>
+        <div class="update-item"><span class="idx">09</span><span class="name">调色风格对照 <small>新增胶片颗粒参数</small></span><time>11 月 11 日</time></div>
+        <div class="update-item"><span class="idx">10</span><span class="name">社区共拍企划《冬夜》 <small>招募 12 位分镜作者</small></span><time>11 月 09 日</time></div>
+      </div>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section anchor" id="cats">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>按创作环节分类</h2>
+        <span class="sub">8 个方向</span>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-card" href="/#picks"><b>分镜脚本</b><span>镜号 · 景别 · 构图</span><span class="count">42 份模板</span></a>
+        <a class="cat-card" href="/#picks"><b>运镜设计</b><span>推拉摇移 · 走位</span><span class="count">36 个案例</span></a>
+        <a class="cat-card" href="/#picks"><b>灯光布景</b><span>三灯 · 色温 · 反光</span><span class="count">18 套方案</span></a>
+        <a class="cat-card" href="/#updates"><b>剪辑节点</b><span>入出点 · 卡点 · 小节</span><span class="count">24 份节点表</span></a>
+        <a class="cat-card" href="/#picks"><b>口播文案</b><span>钩子 · 提词 · 节奏</span><span class="count">31 条脚本</span></a>
+        <a class="cat-card" href="/#cats"><b>器材清单</b><span>稳定器 · 麦克风 · ND</span><span class="count">12 份清单</span></a>
+        <a class="cat-card" href="/#deep"><b>调色风格</b><span>青橙 · 胶片 · 冷调</span><span class="count">9 组对照</span></a>
+        <a class="cat-card" href="/#cats"><b>发布节奏</b><span>排期 · 封面 · 标题</span><span class="count">15 篇方法</span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section anchor deep" id="deep">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>深度解析：一份能拍的分镜脚本长什么样</h2>
+        <span class="sub">阅读约 6 分钟</span>
+      </div>
+      <div class="panel">
+        <p>很多人以为分镜脚本就是把文字描述换成画面描述，其实真正的分界线在于「可执行性」。一份写得好但拍不出来的脚本，和一张写满形容词的便签没有区别。下面从类型差异、要素取舍、判断维度三个层面，拆解起草c17cm视频时最常遇到的决策点。</p>
+
+        <h3>一、叙事脚本与分镜脚本的分工差异</h3>
+        <p>叙事脚本回答「讲什么」，分镜脚本回答「怎么拍」。前者服务于观众的理解曲线，后者服务于剧组的执行效率。两者混写，最常见的后果是：导演在现场不断改机位，剪辑师在后期找不到可用素材。</p>
+        <ul>
+          <li><strong>叙事脚本</strong>：包含场景、人物、动作、对白、情绪走向，字数可多，但不标镜号。</li>
+          <li><strong>分镜脚本</strong>：一行一镜，标镜号、景别、机位、运镜、时长、声音，可画可不画。</li>
+          <li><strong>执行脚本</strong>：把分镜按拍摄顺序重排，标注场地、器材、人员与时间预算。</li>
+        </ul>
+        <p>实际操作中，三者可以合并在一张表里，但列必须分开。合并的好处是改一处就能同步更新，坏处是表格容易变宽，手机上不好看。建议在电脑上完成主表，导出成一页纸的「现场版」，只保留镜号、时长、机位和一句动作提示。</p>
+
+        <h3>二、分镜表的六个必填字段</h3>
+        <p>不是每个字段都要写满，但每个字段都要有值。空着的字段在现场会变成临时决策，而临时决策往往最贵。</p>
+        <div class="compare">
+          <div class="compare-panel">
+            <h4>画面三字段</h4>
+            <p>镜号、景别、运镜。镜号唯一，景别决定信息量，运镜决定观众注意力往哪走。三者组合基本锁定一个镜头的形态。</p>
+          </div>
+          <div class="compare-panel">
+            <h4>执行三字段</h4>
+            <p>时长、声音、字幕。时长是预算，声音是转场依据，字幕是信息补充。缺时长会导致成片超长，缺声音会导致剪辑无锚点。</p>
+          </div>
+        </div>
+        <p>一个常见误区是把「时长」写成区间，比如「3—5 秒」。区间在现场会被执行成上限，最终成片超出预期。更稳的做法是写死一个数，再加一个「可压缩至」的备注，让剪辑知道哪一段能剪。</p>
+
+        <h3>三、竖屏与横屏的构图差异</h3>
+        <p>竖屏不是横屏裁一半。竖屏的垂直空间更大，适合表现纵向的层次与纵深；横屏的水平空间更大，适合表现人物关系与环境。起草c17cm视频时，如果目标是竖屏发布，分镜阶段就要放弃「大远景 + 群像」的组合，改用中近景与纵向构图。</p>
+        <ul>
+          <li><strong>竖屏优先</strong>：中景、近景、特写、过肩、纵向走位、上下分层构图。</li>
+          <li><strong>横屏优先</strong>：远景、全景、双人并排、横向摇移、环境交代镜头。</li>
+          <li><strong>混用策略</strong>：先按发布平台定画幅，再倒推景别，不要拍完再裁。</li>
+        </ul>
+
+        <h3>四、判断一份脚本是否值得投入拍摄</h3>
+        <p>在预算有限的情况下，可以用三个问题快速过滤：这个镜头有没有替代方案？这个转场有没有声音依据？这个场景能不能一次拍完？三个问题都答不上来，说明脚本还停留在概念阶段。</p>
+        <ol>
+          <li><strong>替代方案</strong>：每个高成本镜头至少准备一个低配版本，比如摇臂换成手持上举。</li>
+          <li><strong>声音依据</strong>：转场靠动作、台词还是音效，写清楚，剪辑才有落点。</li>
+          <li><strong>拍摄批次</strong>：把同一场地的镜头合并，减少转场时间，这一天能多拍 30% 的素材。</li>
+        </ol>
+        <p>最后提醒一点：分镜脚本不是越细越好。镜号过多会让拍摄变成流水线，演员失去发挥空间。经验值是每分钟成片 8—15 个镜头，超过这个范围就要检查是不是把「动作分解」误当成了「镜头分解」。</p>
+      </div>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="section anchor" id="guide">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>从零开始的内容消费与练习路径</h2>
+        <span class="sub">5 步</span>
+      </div>
+      <div class="steps">
+        <div class="step"><div><b>先看结构，再看画面</b><span>从三幕结构与 15 秒口播脚本入手，理解信息密度和节奏，不要一上来就研究运镜。</span></div></div>
+        <div class="step"><div><b>选一个单场景模板照着拍</b><span>《雨夜便利店》这类单场景脚本场地成本低，能让注意力集中在机位与灯光上。</span></div></div>
+        <div class="step"><div><b>用正反打练习越轴判断</b><span>双人对话是最快暴露机位问题的题型，拍完对照机位图复盘，比看十篇教程有效。</span></div></div>
+        <div class="step"><div><b>把剪辑节点写进第二版脚本</b><span>第一版只管拍得到，第二版开始标入出点，让素材天生适合剪辑。</span></div></div>
+        <div class="step"><div><b>按发布节奏反推制作周期</b><span>周更就选 60 秒以内的单场景，双周更再考虑多场景叙事，避免产能跟不上排期。</span></div></div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section anchor faq" id="faq">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>常见问题</h2>
+        <span class="sub">6 问</span>
+      </div>
+
+      <details>
+        <summary>分镜脚本一般要写多细才够用？</summary>
+        <div class="answer">按用途分。自己拍自己剪，写到镜号、景别、时长三列就够；有摄影和剪辑协作，再加机位、运镜、声音三列。原则是「现场不需要再决策」的字段必须有值，其余可以省略。镜号数量参考每分钟成片 8—15 个。</div>
+      </details>
+
+      <details>
+        <summary>竖屏短片和横屏短剧的分镜有什么区别？</summary>
+        <div class="answer">主要差在景别与构图。竖屏垂直空间大，适合中近景、纵向走位和上下分层；横屏水平空间大，适合全景、双人并排与横向摇移。竖屏要避免大远景群像，横屏要避免过度依赖特写。画幅应在分镜阶段确定，不要拍完再裁。</div>
+      </details>
+
+      <details>
+        <summary>第一次接触分镜，从哪个模板开始练比较好？</summary>
+        <div class="answer">建议从单场景、60 秒以内的模板开始，比如《雨夜便利店》6 镜竖屏分镜。场地只有一个，变量少，能把注意力放在机位、灯光和时长控制上。拍完再对照原脚本复盘，比直接挑战多场景叙事更容易建立手感。</div>
+      </details>
+
+      <details>
+        <summary>一镜到底和常规分镜，哪个更难？</summary>
+        <div class="answer">难点不同。一镜到底难在调度与容错，任何一次走位失误都要重来，对演员和摄影的配合要求高；常规分镜难在节奏与连贯，镜头之间的方向、光线、情绪要接得上。新手建议先练常规分镜，再尝试 30 秒以内的短长镜头。</div>
+      </details>
+
+      <details>
+        <summary>夜景拍摄一定要用专业灯光吗？</summary>
+        <div class="answer">不一定。手机拍摄夜景的关键是「主光稳定 + 背景有层次」。一块补光灯打人脸，加一盏小灯或反光板做轮廓，再找一个有环境光的背景，就能避免人脸发灰、背景死黑。三灯方案是进阶配置，入门用两灯甚至一灯加反光板也能成立。</div>
+      </details>
+
+      <details>
+        <summary>剪辑节点应该写在脚本里还是后期再定？</summary>
+        <div class="answer">能写就写。至少在分镜表里标出入点和出点，以及对应的音乐小节。这样拍摄时就知道哪一帧要断，避免拍出一堆「好看但接不上」的素材。后期当然还能调，但前置节点能大幅减少返工，尤其是卡点类内容。</div>
+      </details>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section anchor" id="comments">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>创作者评论</h2>
+        <span class="sub">16 条</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment"><div class="who"><span class="avatar" style="background:#ff5a3c">林</span><b>林间拍片</b><time>11-25</time></div><p>照着《雨夜便利店》拍了一版，最大的收获是知道时长要写死。以前总写 3—5 秒，最后成片超了一分钟。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#ffb020;color:#1a1006">周</span><b>周更导演小周</b><time>11-25</time></div><p>一镜到底那篇的环绕段走位讲得实在，我按那个步幅练了两天，晃动明显少了。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#3ddad7;color:#06201f">阿</span><b>阿澈的镜头</b><time>11-24</time></div><p>正反打机位图帮我改掉了越轴的老毛病。之前一直觉得画面别扭，说不上来哪里不对。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#5c7cfa">陈</span><b>陈默剪片</b><time>11-24</time></div><p>剪辑节点表有用，但音乐小节那一列我还没用明白，希望后续能补个例子。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#9b6cff">苏</span><b>苏打水工作室</b><time>11-23</time></div><p>夜景三灯方案试了一次，色温对照很关键，人脸终于不灰了。就是设备搬运有点累。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#4ade80;color:#06201f">南</span><b>南瓜不熬夜</b><time>11-23</time></div><p>15 秒口播的提词节奏标记很实用，换气点标出来之后，录一遍就过了。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#f472b6">李</span><b>李子树下</b><time>11-22</time></div><p>三幕结构的时间码分配对我这种写短剧的挺友好，20/100/60 直接套。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#fbbf24;color:#1a1006">赵</span><b>赵一镜</b><time>11-22</time></div><p>一镜到底确实难，第一次拍废了六条。不过跟着拆解练，第四次就顺了。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#ff5a3c">吴</span><b>吴同学在拍</b><time>11-21</time></div><p>器材清单的入门档预算写得比较实在，没有一上来就推贵的。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#3ddad7;color:#06201f">何</span><b>何老师剪辑课</b><time>11-21</time></div><p>建议分镜表再加一列「备用机位」，现场救场会方便很多。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#5c7cfa">许</span><b>许愿不加班</b><time>11-20</time></div><p>调色四种风格里，胶片颗粒那组参数我调出来偏黄，可能是我白平衡没设对。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#9b6cff">钱</span><b>钱多多拍</b><time>11-20</time></div><p>口播脚本的钩子部分很关键，我换了三个开头，完播率差了一倍。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#4ade80;color:#06201f">郑</span><b>郑小满</b><time>11-19</time></div><p>双人对话的过肩镜头我总觉得挡脸，看了机位图才知道是肩线位置的问题。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#f472b6">孙</span><b>孙大圣剪辑</b><time>11-19</time></div><p>整体不错，就是希望能出个 Excel 版的分镜模板，直接填比对着网页抄方便。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#fbbf24;color:#1a1006">冯</span><b>冯导在现场</b><time>11-18</time></div><p>发布节奏那篇说得对，周更就别搞多场景叙事，产能真的跟不上。</p></div>
+        <div class="comment"><div class="who"><span class="avatar" style="background:#ff5a3c">蒋</span><b>蒋小北</b><time>11-18</time></div><p>第一次拍竖屏，用纵向构图确实比横屏硬裁好看，背景层次一下就出来了。</p></div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section anchor" id="news">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>相关资讯</h2>
+        <span class="sub">6 条</span>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/c17-news01/600/400" width="600" height="400" loading="lazy" alt="竖屏短剧分镜模板上线配图">
+          <div>
+            <div class="meta">2026-11-24 · 模板</div>
+            <h3>竖屏短剧分镜模板新增「双机位」版本</h3>
+            <p>支持主副机位同步标注，解决对话戏单机位反复重拍的问题，已上线 6 份。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/c17-news02/600/400" width="600" height="400" loading="lazy" alt="一镜到底拍摄趋势配图">
+          <div>
+            <div class="meta">2026-11-22 · 趋势</div>
+            <h3>一镜到底在 60 秒内容中的使用率上升</h3>
+            <p>社区统计显示，近一个月提交的长镜头作品数量比上月增加 38%，多为单场景叙事。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/c17-news03/600/400" width="600" height="400" loading="lazy" alt="夜景布光参数调整配图">
+          <div>
+            <div class="meta">2026-11-19 · 灯光</div>
+            <h3>夜景三灯方案色温参数调整说明</h3>
+            <p>主光由 5600K 调整为 4300K，轮廓光保留 3200K，人脸与背景的分离更自然。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/c17-news04/600/400" width="600" height="400" loading="lazy" alt="社区共拍企划冬夜配图">
+          <div>
+            <div class="meta">2026-11-16 · 社区</div>
+            <h3>共拍企划《冬夜》招募 12 位分镜作者</h3>
+            <p>统一命题、统一时长 90 秒，入选作品将获得一对一的分镜点评与器材支持。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/c17-news05/600/400" width="600" height="400" loading="lazy" alt="剪辑节点表更新配图">
+          <div>
+            <div class="meta">2026-11-12 · 剪辑</div>
+            <h3>剪辑节点表新增「音乐小节对齐」列</h3>
+            <p>支持按 4/4 拍小节标注入出点，卡点类内容的返工率明显下降。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/c17-news06/600/400" width="600" height="400" loading="lazy" alt="口播脚本模板新增节奏标记配图">
+          <div>
+            <div class="meta">2026-11-05 · 脚本</div>
+            <h3>口播脚本模板上线「换气点」标记</h3>
+            <p>按每句字数上限自动提示换气位置，适合知识类与产品类口播快速录制。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section anchor" id="related">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>延伸方向与相关推荐</h2>
+        <span class="sub">8 项</span>
+      </div>
+      <div class="panel">
+        <div class="tag-index">
+          <a href="/#picks">越轴判断练习</a>
+          <a href="/#picks">手持防抖走位</a>
+          <a href="/#deep">竖屏纵向构图</a>
+          <a href="/#picks">低成本夜景布光</a>
+          <a href="/#updates">卡点剪辑节点</a>
+          <a href="/#faq">15 秒钩子写法</a>
+          <a href="/#cats">领夹麦收音</a>
+          <a href="/#deep">胶片颗粒调色</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 补充：条目时间线 -->
+    <section class="section anchor" id="timeline">
+      <div class="section-head">
+        <span class="bar" aria-hidden="true"></span>
+        <h2>社区共拍《冬夜》时间线</h2>
+        <span class="sub">进行中</span>
+      </div>
+      <div class="panel">
+        <div class="timeline-v">
+          <div class="tl-item"><b>11 月 16 日 · 命题发布</b><span>统一时长 90 秒，主题「冬夜里的一个决定」，提交分镜表即可报名。</span></div>
+          <div class="tl-item"><b>11 月 20 日 · 分镜初审</b><span>12 位作者入选，获得一对一机位与节奏点评。</span></div>
+          <div class="tl-item"><b>11 月 23 日 · 器材支持到位</b><span>补光灯、领夹麦与稳定器按需分配，拍摄周期 5 天。</span></div>
+          <div class="tl-item"><b>11 月 25 日 · 拍摄进行中</b><span>已有 7 位作者完成主体拍摄，进入粗剪阶段。</span></div>
+          <div class="tl-item"><b>11 月 29 日 · 成片提交</b><span>提交成片与最终版分镜表，用于对照复盘。</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右栏：辅助 -->
+  <aside class="sidebar-right" aria-label="辅助信息">
+    <div class="side-card">
+      <h3>本周热榜</h3>
+      <ol class="hot-list">
+        <li><a href="/#picks">《雨夜便利店》6 镜竖屏分镜<span class="meta">热度 9.6 · 11-24</span></a></li>
+        <li><a href="/#picks">一镜到底的 4 段式运镜拆解<span class="meta">热度 9.2 · 11-22</span></a></li>
+        <li><a href="/#picks">15 秒口播脚本：钩子—证据—行动<span class="meta">热度 8.9 · 11-20</span></a></li>
+        <li><a href="/#picks">双人对话的正反打机位图<span class="meta">热度 8.7 · 11-18</span></a></li>
+        <li><a href="/#picks">夜景低照度布光：三灯方案<span class="meta">热度 8.5 · 11-16</span></a></li>
+      </ol>
+    </div>
+    <div class="side-card">
+      <h3>可信度分层</h3>
+      <div style="font-size:12.5px;color:var(--text-2);line-height:1.8">
+        <p style="margin:0 0 8px"><b style="color:var(--accent-2)">A 级 · 实拍验证</b><br>作者附成片与原始分镜表，可对照复盘。</p>
+        <p style="margin:0 0 8px"><b style="color:var(--cyan)">B 级 · 案例拆解</b><br>基于公开作品逐镜分析，标注时间码。</p>
+        <p style="margin:0"><b style="color:var(--text-3)">C 级 · 方法整理</b><br>经验总结，未附实拍素材，供参考。</p>
+      </div>
+    </div>
+    <div class="side-card">
+      <h3>快速入口</h3>
+      <nav class="channel-list" aria-label="快捷入口">
+        <a href="/#picks"><span class="ico"></span>分镜脚本模板</a>
+        <a href="/#guide"><span class="ico"></span>练习路径</a>
+        <a href="/#faq"><span class="ico"></span>常见问题</a>
+        <a href="/#timeline"><span class="ico"></span>共拍时间线</a>
+      </nav>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="/#top">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="2" y="7" width="26" height="26" rx="7" fill="#ff5a3c"/>
+          <path d="M12 15.5v9l8-4.5-8-4.5z" fill="#fff"/>
+          <rect x="24" y="12" width="14" height="3.6" rx="1.8" fill="#ffb020"/>
+          <rect x="24" y="18.2" width="14" height="3.6" rx="1.8" fill="#3ddad7"/>
+          <rect x="24" y="24.4" width="14" height="3.6" rx="1.8" fill="#5c7cfa"/>
+        </svg>
+        <span class="brand-name">起草<em>c17cm</em>视频</span>
+      </a>
+      <p>把分镜脚本、运镜设计、灯光布景与剪辑节点整理成可复用的创作工作流，服务于短视频导演、剪辑与内容创作者。</p>
+    </div>
+    <div class="footer-col">
+      <h4>内容</h4>
+      <a href="/#picks">分镜脚本模板</a>
+      <a href="/#picks">运镜拆解案例</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#cats">分类索引</a>
+    </div>
+    <div class="footer-col">
+      <h4>学习</h4>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">练习路径</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#news">相关资讯</a>
+    </div>
+    <div class="footer-col">
+      <h4>社区</h4>
+      <a href="/#comments">创作者评论</a>
+      <a href="/#timeline">共拍时间线</a>
+      <a href="/#related">延伸方向</a>
+      <a href="/#top">返回顶部</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 起草c17cm视频 · 内容为创作方法整理与示例条目，实拍数据以作者提交为准</span>
+    <span>站内条目更新至 2026-11-25</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  if(menuToggle && mainNav){
+    menuToggle.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuToggle.textContent = open ? '✕' : '☰';
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+        menuToggle.textContent = '☰';
+      }
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var grid = document.getElementById('cardGrid');
+  var noResult = document.getElementById('noResult');
+  var section = document.getElementById('picks');
+  var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll('.card')) : [];
+
+  function runSearch(){
+    if(!input || !grid) return;
+    var q = input.value.trim().toLowerCase();
+    if(!q){
+      section.classList.remove('searching');
+      cards.forEach(function(c){ c.classList.remove('show'); });
+      noResult.classList.remove('show');
+      return;
+    }
+    section.classList.add('searching');
+    var hit = 0;
+    cards.forEach(function(c){
+      var key = (c.getAttribute('data-key') || '') + ' ' + c.textContent.toLowerCase();
+      if(key.toLowerCase().indexOf(q) !== -1){
+        c.classList.add('show');
+        hit++;
+      } else {
+        c.classList.remove('show');
+      }
+    });
+    noResult.classList.toggle('show', hit === 0);
+  }
+
+  if(btn){ btn.addEventListener('click', runSearch); }
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+    input.addEventListener('input', function(){
+      if(input.value.trim() === ''){ runSearch(); }
+    });
+  }
+})();
+</script>
+</body>
+              </html>
